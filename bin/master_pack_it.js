@@ -28,7 +28,12 @@ console.log(JSON.stringify(argv));
         }
     }
 
-    lib.master_pack_it(target, dist, exclude);
+    lib.master_pack_it(target, dist, exclude).then(function(success){
+        console.log('WebPacked to the master branch!')
+    }, function(failure){
+        console.log('EEP! An error occured!');
+        throw failure.error;
+    });
 
 
 function errorOut(message){
