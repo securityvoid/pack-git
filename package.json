@@ -1,7 +1,7 @@
 {
   "name": "master-pack",
   "version": "1.0.0",
-  "bin": "./bin/master_pack_it.js",
+  "bin": "./bin/master_pack.js",
   "description": "Utility for Webpacking source and returning it to the master branch.",
   "main": "bin/index.js",
   "scripts": {
