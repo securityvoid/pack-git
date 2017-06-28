@@ -27,8 +27,8 @@ lib.createDistribution().then(function(success){
         console.log(error.message);
         console.log(error.stack);
     } else if (error.error instanceof Error) {
-        console.log(error.message);
-        console.log(error.stack);
+        console.log(error.error.message);
+        console.log(error.error.stack);
     } else
         console.log(JSON.stringify(error));
 
