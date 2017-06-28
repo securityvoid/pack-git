@@ -23,11 +23,13 @@ lib.createDistribution().then(function(success){
     console.log('Distribution Created!');
 }, function(error){
     console.log('Distribution Failed!');
-    if(error instanceof Error)
-        throw error;
-    else if (error.error instanceof Error)
-        throw error.error;
-    else
+    if(error instanceof Error) {
+        console.log(error.message);
+        console.log(error.stack);
+    } else if (error.error instanceof Error) {
+        console.log(error.message);
+        console.log(error.stack);
+    } else
         console.log(JSON.stringify(error));
 
 });
