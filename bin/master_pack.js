@@ -19,5 +19,16 @@ if (!fs.existsSync(process.env.DEPLOYMENT_SOURCE)) {
     console.log("Target folder set with ENV DEPLOYMENT_SOURCE or --target does not exist");
     process.exit(1);
 }
-lib.createDistribution();
+lib.createDistribution().then(function(success){
+    console.log('Distribution Created!');
+}, function(error){
+    console.log('Distribution Failed!');
+    if(error instanceof Error)
+        throw error;
+    else if (error.error instanceof Error)
+        throw error.error;
+    else
+        console.log(JSON.stringify(error));
+
+});
 
