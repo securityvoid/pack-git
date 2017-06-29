@@ -1,8 +1,8 @@
 {
-  "name": "master-pack",
+  "name": "pack-git",
   "version": "1.0.0",
-  "bin": "./bin/master_pack.js",
-  "description": "Utility for Webpacking source and returning it to the master branch.",
+  "bin": "./bin/pack_git.js",
+  "description": "Utility for Webpacking source and returning it to a git repository.",
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,15 +13,14 @@
   },
   "keywords": [
     "webpack",
-    "git",
-    "master"
+    "git"
   ],
   "author": "Doug Logan",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/securityvoid/master-pack/issues"
+    "url": "https://github.com/securityvoid/pack-git/issues"
   },
-  "homepage": "https://github.com/securityvoid/master-pack#readme",
+  "homepage": "https://github.com/securityvoid/pack-git#readme",
   "dependencies": {
     "child_process": "^1.0.2",
     "dotenv": "^4.0.0",
