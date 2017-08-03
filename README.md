@@ -13,7 +13,7 @@ After we had just about finished the .deploy script, Microsoft came out with the
 That is likely a more robust solution, but didn't do anything with Git.
 
 
-###Configuration
+## Configuration
 When calling pack-git at a bare minimum you need to pass --target to specify the folder you'd like it to run within, or set the environmental variable PACKGIT_SOURCE to the location. You also have the option of passing the git branch in as similar manner by using the --branch flag. These two flags are created in order to allow you to setup npm scripts that pack up the source to the specified branch. 
 
 For example, with Pack-Git's typical usage you would install this project as a dev dependency.
@@ -31,12 +31,13 @@ And then within your package.json you would include a scripts section something 
 
 Additional options can be then configured within a file .packgit in the root of the folder where your target points.
 
-####Command Line Options
+### Command Line Options
+
 **--target** - The target folder which should be WebPacked and sent to GIT. This is required to be set as a command line option, or as the environmental variable PACKGIT_SOURCE.  
 
 **--branch** - The branch to commit changes to when pack-git runs. This can also be set by either a .packgit configuration file entry, or an environmental variable set with the name PACKGIT_BRANCH.
 
-####PackGit Configuration
+### PackGit Configuration
 All configuration items listed below can be set either as environmental variables or as items within a the configuration file .packgit . Environmental variables will override configuration file items if there are configuration items by the same name.
 
 Example Configuration File, set with all the defaults:
@@ -48,7 +49,7 @@ PACKGIT_IGNORED_MODULES=["crypto", "openpgp"]
 PACKGIT_EXCLUDED_ITEMS=[".git", ".idea", "node_modules", "dist", "package.json", ".gitignore", ".gitmodules", ".npmignore", ".PACKGIT", ".funcpack", "funcpack.config.json"]
 ```
 
-##### Configuration File Options:
+#### Configuration File Options:
 **PACKGIT_BRANCH** - The branch in the repository where you want the packed files to go. If it does not exist, it will create it.
  
 **PACKGIT_SKIPCOMMIT** - If set to "true" or 1, it will pack everything into the designated folder, but will not commit those results to the git repository.
