@@ -6,6 +6,8 @@ var argv = require('minimist')(process.argv.slice(2));
 
 if(argv['target'])
     process.env.PACKGIT_SOURCE=argv['target'];
+if(argv['branch'])
+    process.env.PACKGIT_BRANCH=argv['branch'];
 
 if(!process.env.PACKGIT_SOURCE) {
     console.log("ENV variable DEPLOYMENT_SOURCE must be set or a value passed for --target")
