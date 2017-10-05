@@ -1,6 +1,6 @@
 {
   "name": "pack-git",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": "./bin/pack_git.js",
   "description": "Utility for Webpacking source and returning it to a git repository.",
   "main": "bin/index.js",
