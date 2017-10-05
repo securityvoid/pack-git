@@ -59,3 +59,14 @@ PACKGIT_EXCLUDED_ITEMS=[".git", ".idea", "node_modules", "dist", "package.json",
 **PACKGIT_IGNORED_MODULES** - A list of any modules that should be ignored by WebPack and not combined.
 
 **PACKGIT_EXCLUDED_ITEMS** - A list of files or folders that should not be copied into the folder used to create the distribution. This is mostly useful for getting rid of artifacts that are not needed for the application to run, but are in the main git branches.
+
+# Troubleshooting
+Pack-Git Requires that you don't have relative file references within a require statement directly. Instead you must use path.join. It will throw out errors near WebPacking time if you do this.
+
+For example, this is bad:
+
+require('../myfolder/myfile.js');
+
+This is good:
+
+require(path.join('..', 'myfolder', 'myfile.js'));
