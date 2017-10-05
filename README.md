@@ -60,6 +60,8 @@ PACKGIT_EXCLUDED_ITEMS=[".git", ".idea", "node_modules", "dist", "package.json",
 
 **PACKGIT_EXCLUDED_ITEMS** - A list of files or folders that should not be copied into the folder used to create the distribution. This is mostly useful for getting rid of artifacts that are not needed for the application to run, but are in the main git branches.
 
+**PACKGIT_DEBUG_LEVEL** - A value from 0-10 indicating what level of debug output to be printed to the console.
+
 # Troubleshooting
 Pack-Git Requires that you don't have relative file references within a require statement directly. Instead you must use path.join. It will throw out errors near WebPacking time if you do this.
 
