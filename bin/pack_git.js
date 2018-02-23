@@ -10,7 +10,7 @@ if(argv['branch'])
     process.env.PACKGIT_BRANCH=argv['branch'];
 
 if(!process.env.PACKGIT_SOURCE) {
-    console.log("ENV variable DEPLOYMENT_SOURCE must be set or a value passed for --target")
+    console.log("ENV variable PACKGIT_SOURCE must be set or a value passed for --target")
     process.exit(1)
 }
 
@@ -18,7 +18,7 @@ process.env.PACKGIT_SOURCE=path.resolve(process.env.PACKGIT_SOURCE);
 
 var fs = require('fs');
 if (!fs.existsSync(process.env.PACKGIT_SOURCE)) {
-    console.log("Target folder set with ENV DEPLOYMENT_SOURCE or --target does not exist");
+    console.log("Target folder set with ENV PACKGIT_SOURCE or --target does not exist");
     process.exit(1);
 }
 lib.createDistribution().then(function(success){
